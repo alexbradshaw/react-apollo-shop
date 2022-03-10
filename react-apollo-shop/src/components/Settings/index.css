@@ -1,0 +1,35 @@
+
+.mainContent{
+    display: flex;
+    width: 90vw;
+    height: 80vh;
+    align-items: flex-start;
+    padding: 10vh 5vw;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.collapsibleContainer {
+    border: 3px black solid;
+    padding: 5%;
+}
+
+.settingsButtons {
+    width: 100%;
+    border: 3px black solid;
+    background: none;
+    color: white;
+    font: inherit;
+}
+
+.collapsibleContainer:active{
+    color: black
+}
+
+.settingsButtons:active {
+    color: black
+}
+
+.span {
+
+}
