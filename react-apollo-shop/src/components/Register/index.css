@@ -1,0 +1,59 @@
+
+/* MEDIA QUERY SMALL VIEWPORTS */
+@media screen and (max-width: 640px) {
+
+    /* Backdrop for register modal */
+    .backdrop {
+        display: grid;
+        height: 100vh;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    .register-modal-container {
+        display: grid;
+        align-self: center;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        border: 1px solid black;
+        /* row gap / column gap */
+        gap: 10px 0;
+        height: 80vh;
+        background-color: white;
+    }
+
+    h3 {
+        grid-column: 2 / 9;
+    }
+
+    .register-modal-container p {
+        grid-column: 2 / 12;
+        grid-template-rows: 10px;
+    }
+
+    .username, .email, .password, .btn {
+        align-items: end;
+        grid-column: 2 / 12;
+        text-indent: 10px;
+    }
+
+    .btn {
+        height: 5vh;
+    }
+
+    .hr {
+        border-bottom: 1px solid black;
+        grid-column: 1 / 13;
+        grid-row: 6 / 7;
+        align-self: center;
+    }
+
+    span {
+        grid-column: 6 / 8;
+        grid-row: 6 / 7;
+        text-align: center;
+        align-self: center;
+        background-color: rgb(255, 255, 255);
+    }
+    
+}
