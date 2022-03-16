@@ -1,7 +1,7 @@
 
 /* Medium Viewports */
 @media screen and (max-width: 1007px) {
-
+  
     /* Define the container as grid */
     /* Direct decendent elements are grid items | All sub-elements are not */
     .landing-container {
