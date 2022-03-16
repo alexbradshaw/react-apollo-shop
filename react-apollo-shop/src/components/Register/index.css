@@ -1,5 +1,5 @@
 
-/* MEDIA QUERY SMALL VIEWPORTS */
+/* Media query medium viewports */
 @media screen and (max-width: 1007px) {
 
     /* Backdrop for register modal */
@@ -58,6 +58,7 @@
     
 }
 
+/* Media query small viewports */
 @media screen and (max-width: 640px) {
 
 
