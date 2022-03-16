@@ -1,6 +1,6 @@
 
 /* MEDIA QUERY SMALL VIEWPORTS */
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1007px) {
 
     /* Backdrop for register modal */
     .backdrop {
@@ -56,4 +56,9 @@
         background-color: rgb(255, 255, 255);
     }
     
+}
+
+@media screen and (max-width: 640px) {
+
+
 }
