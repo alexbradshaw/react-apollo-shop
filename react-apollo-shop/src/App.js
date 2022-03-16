@@ -15,6 +15,7 @@ function App() {
 
         <Route path='/' exact element={< Landing /> }/>
         <Route path='/settings' exact element={< Settings /> }/>
+        {/* Temporary route */}
         <Route path='/register' exact element={< Register /> }/>
 
       </Routes>
