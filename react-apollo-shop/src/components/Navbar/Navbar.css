@@ -1,0 +1,105 @@
+@media screen and (max-width: 1007px) {
+
+    /* Grid container 2 row 12 column grid */
+    .nav-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        height: 11vh;
+
+        /* Border is here only for spacial awareness | REMOVE for production */
+        /* border: 1px solid black; */
+        margin: 1vh 1vw;
+    }
+
+    .logo {
+        /* justify-self: center;*/
+        justify-self: center;
+        align-self: center; 
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .burger-menu {
+        justify-self: center;
+        align-self: center;
+        height: 3.5vh;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+
+        color: black;
+    }
+
+    .search-bar {
+        align-self: center;
+        height: 3vh;
+        border-radius: 18px;
+        grid-column: 2 / 13;
+        grid-row: 2 / 3;
+
+        text-indent: 1vw;
+
+    }
+
+    .search-icon {
+        justify-self: center;
+        align-self: center;
+        height: 2.5vh;
+        grid-column: 12 / 13;
+        grid-row: 2 / 3;
+
+    }
+
+    .sign-in {
+        justify-self: center;
+        align-self: center;
+        grid-column: 11 / 12;
+        grid-row: 1 / 2;
+
+
+    }
+
+    .shopping-cart {
+        justify-self: center;
+        align-self: center;
+        height: 3vh;
+        grid-column: 12 / 13;
+        grid-row: 1 / 2;
+
+
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+
+    .nav-container {
+        margin: 0vh 2vw;
+    }
+
+    .logo {
+        justify-self: start;
+        grid-column: 1 / 4;
+
+        font-size: 1rem;
+    }
+
+    .sign-in {
+        grid-column: 10 / 12;
+        font-size: .75rem;
+    }
+
+    .burger-menu {
+        justify-self: start;
+        grid-column: 1 / 3;
+    }
+
+    .search-bar {
+        justify-self: stretch;
+        grid-column: 2 / 13;
+    }
+
+}
