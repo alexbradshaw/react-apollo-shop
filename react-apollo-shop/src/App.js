@@ -7,10 +7,14 @@ import Settings from './components/Settings';
 import Landing from './pages/Landing';
 import Register from './components/Register';
 
+//* Components
+import Navbar from './components/Navbar/Navbar';
+
 function App() {
   return (
     
     <Router>
+      <Navbar />
       <Routes>
 
         <Route path='/' exact element={< Landing /> }/>
