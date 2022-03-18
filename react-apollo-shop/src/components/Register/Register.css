@@ -3,7 +3,7 @@
 @media screen and (max-width: 1007px) {
 
     /* Backdrop for register modal */
-    .backdrop {
+    .register-backdrop {
         display: grid;
         height: 100vh;
         justify-content: center;
