@@ -9,16 +9,14 @@
 
         /* Border is here only for spacial awareness | REMOVE for production */
         /* border: 1px solid black; */
-        margin: 1vh 1vw;
+
     }
 
     .logo {
-        /* justify-self: center;*/
         justify-self: center;
         align-self: center; 
         grid-column: 1 / 3;
         grid-row: 1 / 2;
-
         font-size: 1.5rem;
         margin: 0;
     }
@@ -41,7 +39,6 @@
         grid-row: 2 / 3;
 
         text-indent: 1vw;
-
     }
 
     .search-icon {
@@ -50,7 +47,6 @@
         height: 2.5vh;
         grid-column: 12 / 13;
         grid-row: 2 / 3;
-
     }
 
     .sign-in {
@@ -58,8 +54,6 @@
         align-self: center;
         grid-column: 11 / 12;
         grid-row: 1 / 2;
-
-
     }
 
     .shopping-cart {
@@ -68,8 +62,20 @@
         height: 3vh;
         grid-column: 12 / 13;
         grid-row: 1 / 2;
+    }
 
+    .backdrop {
+        height: 100%;
+        position: absolute;
+        
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 
+    .navbar-categories {
+        height: 100%;
+        width: 100vw;
+
+        background-color: rgb(255, 255, 255);
     }
 
 }
@@ -89,6 +95,7 @@
 
     .sign-in {
         grid-column: 10 / 12;
+
         font-size: .75rem;
     }
 

@@ -1,10 +1,10 @@
-import './index.css';
+import './Register.css';
 
 const Register = () => {
 
     return (
 
-        <div className='backdrop'>
+        <div className='register-backdrop'>
             <div className='register-modal-container'>
                 <h3> Create your account </h3>
                 <input
