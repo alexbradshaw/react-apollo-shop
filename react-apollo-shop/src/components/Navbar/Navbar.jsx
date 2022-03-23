@@ -1,7 +1,7 @@
 import './Navbar.css';
 import React, { useState } from 'react';
 //* Framer Motion
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 //* Images
 import burgerMenu from './imgs/burger_menu.png';
@@ -24,9 +24,9 @@ const Navbar = ({ modalOpen, toggle }) => {
             }
         },
         exit: {
-            y: '-100vh',
+            y: '10vh',
             transition: {
-                duration: .5,
+                duration: 0.5,
             }
         }
     };
@@ -35,7 +35,7 @@ const Navbar = ({ modalOpen, toggle }) => {
         
         /* Navbar */
         <nav className='nav-container'>
-            <h4 className='logo'> Trasher🤘 </h4>
+            <h4 className='logo'> Trasher 🤘 </h4>
             <img className='burger-menu'
                 src={burgerMenu}
                 onClick={() => toggle()}
@@ -53,11 +53,11 @@ const Navbar = ({ modalOpen, toggle }) => {
                 src={shoppingCart} 
             />
 
-            {/* If modalOpen state is true show modal | else if state is hide */}
+            {/* If modalOpen state is true modal open | else if state is false modal hidden */}
             {modalOpen && (
                 
                 /* opaque background to target click event to toggle state to false & hide modal */
-                <div className='backdrop' onClick={() => toggle()}>
+                <div className='backdrop'>
                 
                     <motion.section 
                         className='navbar-categories'
@@ -66,7 +66,8 @@ const Navbar = ({ modalOpen, toggle }) => {
                         animate='visible'
                         exit='exit'
                     >
-                        <h3> Trasher </h3>
+                        <h2> Browse Categories </h2>
+                        <p className='close' onClick={() => toggle()}> X </p>
                     </motion.section>
                 </div>
                 )}
