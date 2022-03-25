@@ -1,0 +1,86 @@
+:root {
+    --text-size: xx-large;
+    --margin: 0%;
+    --padding: 2%;
+  }
+
+  .mainContent{
+    display: flex;
+    width: 44vw;
+    height: 70vh;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin: 15vh 28vw;
+    border: 3px black solid;
+    align-content: flex-start;
+}
+
+.collapsibleContainer {
+    border: 0;
+    text-align: start;
+    width: 100%;
+    border-bottom: 3px black solid;
+    padding: var(--padding);
+    font-size: var(--text-size);
+    margin: var(--margin);
+}
+
+.settingsButtons {
+    width: 100%;
+    border-bottom: 3px black solid;
+    background: none;
+    font: inherit;
+    font-size: var(--text-size);
+    margin: var(--margin);
+    padding: var(--padding);
+}
+
+.collapsibleContainer:active{
+    color: gray
+}
+
+.settingsButtons:active {
+    color: gray
+}
+
+@media only screen and (max-width: 1007px) {
+
+    :root {
+        --text-size: x-large;
+        --margin: 0%;
+        --padding: 5%;
+      }
+
+    .mainContent{
+        width: 90vw;
+        height: 80vh;
+        padding: 10vh 5vw;
+        margin: 0;
+        border: 0;
+        align-content: normal;
+    }
+    
+    .collapsibleContainer {
+        border: 3px black solid;
+        text-align: center;
+    }
+    
+    .settingsButtons {
+        border: 3px black solid;
+    }
+    
+
+}
+
+
+@media only screen and (max-width: 640px) {
+
+    :root {
+        --text-size: large;
+        --margin: 0%;
+        --padding: 5%;
+      }
+      
+}
+

@@ -2,15 +2,16 @@ import './App.css';
 import React, { useState } from 'react';
 //! No longer use Switch | Instead use Routes
 import { Routes, Route } from 'react-router-dom';
-import Settings from './components/Settings';
 
 //* Pages
-import Landing from './pages/Landing';
+import Landing from './pages/Landing/Landing';
 import Register from './components/Register/Register';
+import Settings from './pages/Settings/Settings';
 
 //* Components
 import Navbar from './components/Navbar/Navbar';
 import { AnimatePresence } from 'framer-motion';
+import Footer from './components/Footer/Footer'
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
           <Route path='/settings' exact element={< Settings /> }/>
           {/* Temporary route */}
           <Route path='/register' exact element={< Register /> }/>
+          <Route path='/footer' exact element={< Footer /> }/>
 
         </Routes>
       </AnimatePresence>
