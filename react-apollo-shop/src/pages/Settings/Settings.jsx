@@ -2,20 +2,24 @@ import React, { useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import Collapsible from 'react-collapsible';
 import './Settings.css';
+import useLocalStorage from 'use-local-storage';
+
 
 // all that's really left here is functionality and making it so the button for the collapsible is the entire box and not just the text
 
-const Settings = () => {
+const Settings = ({ theme, switchTheme }) => {
 
-const [darkMode, setDarkMode] = useState(false);
+//const [darkMode, setDarkMode] = useState(false);
+
+
 
 function deleteAccount() {
     console.log('delete account has been pressed');
 }
 
 function both() {
-    setDarkMode(!darkMode) 
-    console.log(`theme has been toggled to ${!darkMode}`)
+    //setDarkMode(!darkMode) 
+    //console.log(`theme has been toggled to ${!darkMode}`)
 }
 
 function changePassword() {
@@ -34,7 +38,7 @@ return (
         </p>
       </Collapsible>
       <button className='collapsibleContainer settingsButtons' onClick={deleteAccount}>Delete Account</button>
-      <button className='collapsibleContainer settingsButtons' onClick={both}>Theme [<span className='span'> Light </span>]</button>
+      <button className='collapsibleContainer settingsButtons' onClick={switchTheme}>Theme Light/Dark</button>
       <button className='collapsibleContainer settingsButtons' onClick={changePassword}>Change Password</button>
       <Collapsible trigger="Contribute" className='collapsibleContainer' openedClassName='collapsibleContainer'>
         <p> 
