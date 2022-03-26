@@ -4,11 +4,13 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 //* Images
-import burgerMenu from './imgs/burger_menu.png';
-import shoppingCart from './imgs/shopping_cart.png'
+import burgerMenuDark from './imgs/burger_menu_dark.png';
+import burgerMenuLight from './imgs/burger_menu_light.png';
+import shoppingCartDark from './imgs/shopping_cart_dark.png';
+import shoppingCartLight from './imgs/shopping_cart_light.png';
 import search from './imgs/search.png';
 
-const Navbar = ({ modalOpen, toggle }) => {
+const Navbar = ({ modalOpen, toggle, theme }) => {
 
     /* Nav Categories */
     const navVariants = {
@@ -20,13 +22,13 @@ const Navbar = ({ modalOpen, toggle }) => {
             y: '10vh',
             opacity: 1,
             transition: {
-                duration: 0.5,
+                duration: 0,
             }
         },
         exit: {
             y: '10vh',
             transition: {
-                duration: 0.5,
+                duration: 0,
             }
         }
     };
@@ -37,7 +39,8 @@ const Navbar = ({ modalOpen, toggle }) => {
         <nav className='nav-container'>
             <h4 className='logo'> Trasher 🤘 </h4>
             <img className='burger-menu'
-                src={burgerMenu}
+                /* conditionally renders dark or light burger menu icon */
+                src={theme === 'light' ? burgerMenuDark : burgerMenuLight}
                 onClick={() => toggle()}
             />
             <input className='search-bar'
@@ -50,7 +53,7 @@ const Navbar = ({ modalOpen, toggle }) => {
             />
             <a href='#' className='sign-in'> Sign in </a>
             <img className='shopping-cart'
-                src={shoppingCart} 
+                src={theme === 'light' ? shoppingCartDark : shoppingCartLight}
             />
 
             {/* If modalOpen state is true modal open | else if state is false modal hidden */}

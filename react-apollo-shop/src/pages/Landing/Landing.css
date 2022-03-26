@@ -15,7 +15,7 @@
         width: 90vw;
         margin: 5vh 0 0 0;
         background-color: rgba(0, 0, 0, 0.5);
-        border: 1px solid black;
+        border: var(--border);
     }
 
     .categories {
@@ -26,7 +26,7 @@
     }
 
     .categories a {
-        color: rgba(0, 0, 0);
+        color: var(--text-primary);
         text-decoration: none;
     }
 
@@ -43,17 +43,17 @@
     }
 
     .card-1 {
-        border: 1px solid rgba(0, 0, 0);
+        border: var(--border);
         grid-column: 1/3;
     }
     
     .card-2 {
-        border: 1px solid rgba(0, 0, 0);
+        border: var(--border);
         grid-column: 1/2;
     }
 
     .card-3 {
-        border: 1px solid rgba(0, 0, 0);
+        border: var(--border);
         grid-column: 2/3;
     }
 

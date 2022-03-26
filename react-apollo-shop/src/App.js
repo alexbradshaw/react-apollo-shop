@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 //! No longer use Switch | Instead use Routes
 import { Routes, Route } from 'react-router-dom';
+import useLocalStorage from 'use-local-storage';
 
 //* Pages
 import Landing from './pages/Landing/Landing';
@@ -34,25 +35,35 @@ function App() {
     setModalOpen(true)
   };
 
+  //! Light/Dark mode state
+  const [ theme, setTheme ] = useLocalStorage('theme' ? 'dark' : 'light');
+
+  //! pass as a prop to Settings for light/dark mode toggle
+  const switchTheme = () => {
+    console.log('Switch Theme clicked!')
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  };
+
   return (
     
-    
+    <div data-theme={theme}>
       <AnimatePresence
         initial={false}
         exitBeforeEnter={true}
       >
-        <Navbar modalOpen={modalOpen} setModalOpen={setModalOpen} open={open} close= {close} toggle={toggle}/>
+        <Navbar modalOpen={modalOpen} setModalOpen={setModalOpen} open={open} close= {close} toggle={toggle} theme={theme}/>
         <Routes>
 
           <Route path='/' exact element={< Landing /> }/>
-          <Route path='/settings' exact element={< Settings /> }/>
+          <Route path='/settings' exact element={< Settings theme={theme} switchTheme={switchTheme}/> } />
           {/* Temporary route */}
           <Route path='/register' exact element={< Register /> }/>
           <Route path='/footer' exact element={< Footer /> }/>
 
         </Routes>
       </AnimatePresence>
-    
+      </div>
 
   );
 }

@@ -15,11 +15,11 @@
         align-self: center;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: repeat(12, 1fr);
-        border: 1px solid black;
+        border: var(--border);
         /* row gap / column gap */
         gap: 10px 0;
         height: 80vh;
-        background-color: white;
+        background-color: var(--background);
     }
 
     h3 {
@@ -42,18 +42,18 @@
     }
 
     .hr {
-        border-bottom: 1px solid black;
+        border-bottom: var(--border);
         grid-column: 1 / 13;
         grid-row: 6 / 7;
         align-self: center;
     }
 
-    span {
+    .register-modal-container span {
         grid-column: 6 / 8;
         grid-row: 6 / 7;
         text-align: center;
         align-self: center;
-        background-color: rgb(255, 255, 255);
+        background-color: var(--background);
     }
     
 }
