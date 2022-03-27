@@ -2,8 +2,8 @@
 :root {
   --background: rgb(255, 255, 255);
   --text-primary: rgb(0, 0, 0);
-  --border: 1px solid black;
   --border: 1px solid rgb(0, 0, 0);
+  --border-lg: 3px solid rgb(0, 0, 0);
 }
 
 /* Dark mode */
@@ -11,6 +11,7 @@
   --background: rgb(0, 0, 0);
   --text-primary: rgb(255, 255, 255);
   --border: 1px solid rgb(255, 255, 255);
+  --border-lg: 3px solid rgb(255, 255, 255);
 }
 
 body {

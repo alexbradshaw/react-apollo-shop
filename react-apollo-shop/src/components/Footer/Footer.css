@@ -62,12 +62,12 @@
     }
     
     .collapsibleContainer {
-        border: 3px black solid;
+        border: var(--border-lg);
         text-align: center;
     }
     
     .settingsButtons {
-        border: 3px black solid;
+        border: var(--border-lg);
     }
     
 

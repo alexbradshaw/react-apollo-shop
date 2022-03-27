@@ -12,7 +12,7 @@
     flex-wrap: wrap;
     overflow: hidden;
     margin: 15vh 28vw;
-    border: 3px black solid;
+    border: var(--border-lg);
     align-content: flex-start;
 }
 
@@ -62,12 +62,12 @@
     }
     
     .collapsibleContainer {
-        border: 3px black solid;
+        border: var(--border-lg);
         text-align: center;
     }
     
     .settingsButtons {
-        border: 3px black solid;
+        border: var(--border-lg);
     }
     
 

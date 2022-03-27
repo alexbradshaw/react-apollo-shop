@@ -35,8 +35,8 @@ function App() {
     setModalOpen(true)
   };
 
-  //! Light/Dark mode state
-  const [ theme, setTheme ] = useLocalStorage('theme' ? 'dark' : 'light');
+  //! Light/Dark mode state saved to localStorage
+  const [ theme, setTheme ] = useLocalStorage('theme', 'theme' ? 'dark' : 'light');
 
   //! pass as a prop to Settings for light/dark mode toggle
   const switchTheme = () => {

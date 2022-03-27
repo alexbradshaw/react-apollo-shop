@@ -38,7 +38,9 @@ return (
         </p>
       </Collapsible>
       <button className='collapsibleContainer settingsButtons' onClick={deleteAccount}>Delete Account</button>
-      <button className='collapsibleContainer settingsButtons' onClick={switchTheme}>Theme Light/Dark</button>
+      
+      {/* Capitalize first chararacter */}
+      <button className='collapsibleContainer settingsButtons' onClick={switchTheme}>Theme {`${theme[0].toUpperCase()}${theme.slice(1)}`}</button>
       <button className='collapsibleContainer settingsButtons' onClick={changePassword}>Change Password</button>
       <Collapsible trigger="Contribute" className='collapsibleContainer' openedClassName='collapsibleContainer'>
         <p> 
