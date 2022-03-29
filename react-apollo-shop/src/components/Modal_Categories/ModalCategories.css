@@ -1,15 +1,5 @@
 @media screen and (max-width: 1007px) {
 
-    .backdrop {
-        height: 100%;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-
     .navbar-categories {
         display: grid;
         grid-template-columns: repeat(12, 1fr);

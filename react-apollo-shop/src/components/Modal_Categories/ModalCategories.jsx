@@ -1,7 +1,8 @@
 import './ModalCategories.css';
+import Backdrop from '../Backdrop/BackDrop';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const ModalCategories = ({ toggle, modalOpen }) => {
+const ModalCategories = ({ handleClose, toggle, modalOpen }) => {
     
     /* Nav Categories */
     const categoryVariants = {
@@ -15,21 +16,6 @@ const ModalCategories = ({ toggle, modalOpen }) => {
             transition: {
                 duration: 0,
             }
-        },
-        exit: {
-            y: '10vh',
-            transition: {
-                duration: 0,
-            }
-        }
-    };
-
-    const backdropVariants = {
-        hidden: { 
-            opacity: 0 
-        },
-        visible: { 
-            opacity: 1,
         }
     };
     
@@ -41,28 +27,23 @@ const ModalCategories = ({ toggle, modalOpen }) => {
         >
             
             {/* If modalOpen state is true modal open | else if state is false modal hidden */}
-            {modalOpen && (
+            { modalOpen && (
                 
                 /* opaque background to target click event to toggle state to false & hide modal */
-                <motion.div className='backdrop' 
-                    onClick={() => toggle()}
-                    variants={backdropVariants}
-                    initial='hidden'
-                    animate='visible'
-                >
+                <Backdrop toggle={toggle}>
                 
                     <motion.section 
                         className='navbar-categories'
+                        onClick={(e) => e.stopPropagation()}
                         variants={ categoryVariants }
                         initial='hidden'
                         animate='visible'
-                        exit='exit'
                     >
                         <h2> Browse Categories </h2>
-                        <p className='close' onClick={() => toggle()}> X </p>
+                        <p className='close' onClick={ () => toggle() }> X </p>
                     </motion.section>
-                </motion.div>
-                
+                </Backdrop>
+
             )}
 
         </AnimatePresence>
