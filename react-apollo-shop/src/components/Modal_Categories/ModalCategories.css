@@ -1,0 +1,56 @@
+@media screen and (max-width: 1007px) {
+
+    .backdrop {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-categories {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        height: 89vh;
+        width: 100vw;
+
+        background-color: var(--background);
+    }
+
+    .navbar-categories h2 {
+        grid-column: 3 / 11;
+        align-self: center;
+        justify-self: center;
+        margin: 0;
+
+        font-size: 4vh;
+    }
+
+    .navbar-categories p {
+        grid-column: 11/ 13;
+        align-self: center;
+        justify-self: center;
+        margin: 0;
+
+        font-size: 4vh;
+        font-weight: bold;
+        
+    }
+
+}
+
+
+@media screen and (max-width: 640px) {
+    
+    .navbar-categories h2 {
+        font-size: 3vh;
+        
+    }
+}

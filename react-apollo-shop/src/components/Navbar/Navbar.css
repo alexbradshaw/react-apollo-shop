@@ -65,42 +65,7 @@
         grid-row: 1 / 2;
     }
 
-    .backdrop {
-        height: 100%;
-        position: absolute;
-        
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .navbar-categories {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(12, 1fr);
-        height: 100%;
-        width: 100vw;
-
-        background-color: var(--background);
-    }
-
-    .navbar-categories h2 {
-        grid-column: 3 / 11;
-        align-self: center;
-        justify-self: center;
-        margin: 0;
-
-        font-size: 4vh;
-    }
-
-    .navbar-categories p {
-        grid-column: 11/ 13;
-        align-self: center;
-        justify-self: center;
-        margin: 0;
-
-        font-size: 4vh;
-        font-weight: bold;
-        
-    }
+    
 }
 
 @media screen and (max-width: 640px) {
