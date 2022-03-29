@@ -6,34 +6,41 @@ import useLocalStorage from 'use-local-storage';
 
 //* Pages
 import Landing from './pages/Landing/Landing';
-import Register from './components/Register/Register';
+import ModalSignUp from './components/ModalSignUp/ModalSignUp';
 import Settings from './pages/Settings/Settings';
 
 //* Components
 import Navbar from './components/Navbar/Navbar';
 import ModalCategories from './components/Modal_Categories/ModalCategories';
-import { AnimatePresence } from 'framer-motion';
+import Backdrop from './components/Backdrop/Backdrop';
 import Footer from './components/Footer/Footer'
 
 function App() {
 
-  const [modalOpen, setModalOpen] = useState(false);
+  const [categoriesOpen, setCategoriesOpen] = useState(false);
 
-  const toggle= () => {
-    console.log('Toggle clicked', modalOpen)
-    modalOpen ? setModalOpen(false) : setModalOpen(true);
+  //? Might not need this | possibly use toggleBackDrop
+  const toggleCategories = () => {
+    console.log('Toggle categories clicked', categoriesOpen)
+    categoriesOpen ? setCategoriesOpen(false) : setCategoriesOpen(true);
   };
 
-  const close = () => {
-    console.log('Close clicked')
-    setModalOpen(false)
+  const [signUpOpen, setSignUpOpen] = useState(false);
+
+  //? Might not need this | possibly use toggleBackDrop
+  const toggleSignUp = () => {
+    console.log('Toggle clicked', categoriesOpen)
+    signUpOpen ? setSignUpOpen(false) : setSignUpOpen(true);
   };
 
-  const open = () => {
-    //e.stopPropgation();
-    console.log('Open clicked')
-    setModalOpen(true)
+  
+  //! When backdrop for modals is clicked set all modal states to false
+  const toggleBackDrop = () => {
+    console.log('Toggle Backdrop clicked!');
+    setSignUpOpen(false);
+    setCategoriesOpen(false);
   };
+
 
   //! Light/Dark mode state saved to localStorage
   const [ theme, setTheme ] = useLocalStorage('theme', 'theme' ? 'dark' : 'light');
@@ -49,15 +56,29 @@ function App() {
     
     <div data-theme={theme}>
       
-      <Navbar modalOpen={modalOpen} setModalOpen={setModalOpen} open={open} close= {close} toggle={toggle} theme={theme}/>
-      <ModalCategories toggle={toggle} modalOpen={modalOpen}/>
+      {/* Components */}
+      <Navbar modalOpen={categoriesOpen} 
+        setCategoriesOpen={setCategoriesOpen} 
+        toggleCategories={toggleCategories}
+        toggleBackDrop={toggleBackDrop}
+        toggleSignUp={toggleSignUp}
+        theme={theme}
+      />
 
+      <ModalCategories toggleCategories={toggleCategories} 
+        categoriesOpen={categoriesOpen}
+        toggleBackDrop={toggleBackDrop}
+      />
+      <ModalSignUp toggleSignUp={toggleSignUp} 
+        signUpOpen={signUpOpen}
+        toggleBackDrop={toggleBackDrop}
+      /> 
       <Routes>
 
+        {/* Pages */}
         <Route path='/' exact element={< Landing /> }/>
         <Route path='/settings' exact element={< Settings theme={theme} switchTheme={switchTheme}/> } />
-        {/* Temporary route */}
-        <Route path='/register' exact element={< Register /> }/>
+        
         <Route path='/footer' exact element={< Footer /> }/>
 
       </Routes>

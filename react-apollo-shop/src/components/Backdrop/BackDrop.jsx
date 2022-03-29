@@ -2,7 +2,7 @@ import './BackDrop.css';
 import { motion } from 'framer-motion';
 
 //! This should wrap all modals
-const Backdrop = ({ children, toggle }) => {
+const Backdrop = ({ children, toggleBackDrop }) => {
 
     const backdropVariants = {
         hidden: { 
@@ -22,7 +22,7 @@ const Backdrop = ({ children, toggle }) => {
     /* opaque background to target click event to toggle state to false & hide modal */
     return ( 
         <motion.div className='backdrop'
-                    onClick={() => toggle() }
+                    onClick={toggleBackDrop}
                     variants={ backdropVariants }
                     initial='hidden'
                     animate='visible'

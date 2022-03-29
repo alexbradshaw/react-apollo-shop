@@ -10,9 +10,7 @@ import shoppingCartDark from './imgs/shopping_cart_dark.png';
 import shoppingCartLight from './imgs/shopping_cart_light.png';
 import search from './imgs/search.png';
 
-const Navbar = ({ modalOpen, toggle, theme }) => {
-
-    
+const Navbar = ({ theme, toggleCategories, toggleSignUp }) => {
 
     return (
         
@@ -22,7 +20,7 @@ const Navbar = ({ modalOpen, toggle, theme }) => {
             <img className='burger-menu'
                 /* conditionally renders dark or light burger menu icon */
                 src={theme === 'light' ? burgerMenuDark : burgerMenuLight}
-                onClick={() => toggle()}
+                onClick={() => toggleCategories()}
             />
             <input className='search-bar'
                 type="text" 
@@ -32,8 +30,14 @@ const Navbar = ({ modalOpen, toggle, theme }) => {
             <img className='search-icon'
                 src={search} 
             />
-            <a href='#' className='sign-in'> Sign in </a>
+            <a href='#' 
+                className='sign-in' 
+                onClick={() => toggleSignUp()}
+                > 
+                Sign in 
+            </a>
             <img className='shopping-cart'
+                /* conditionally renders dark or light cart icon */
                 src={theme === 'light' ? shoppingCartDark : shoppingCartLight}
             />
 

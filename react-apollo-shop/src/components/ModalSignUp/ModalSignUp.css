@@ -2,23 +2,17 @@
 /* Media query medium viewports */
 @media screen and (max-width: 1007px) {
 
-    /* Backdrop for register modal */
-    .register-backdrop {
-        display: grid;
-        height: 100vh;
-        justify-content: center;
-        background-color: rgba(0, 0, 0, 0.25);
-    }
-
     .register-modal-container {
         display: grid;
         align-self: center;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: repeat(12, 1fr);
+        grid-column: 4 / 10;
+        grid-row: 2 / 11;
         border: var(--border);
         /* row gap / column gap */
         gap: 10px 0;
-        height: 80vh;
+        z-index: 1;
         background-color: var(--background);
     }
 
@@ -54,6 +48,15 @@
         text-align: center;
         align-self: center;
         background-color: var(--background);
+    }
+
+    .register-modal-container p {
+        align-self: center;
+        justify-self: center;
+        margin: 0;
+        grid-column: 11 / 13;
+        font-size: 4vh;
+        font-weight: bold;
     }
     
 }

@@ -1,8 +1,8 @@
 import './ModalCategories.css';
-import Backdrop from '../Backdrop/BackDrop';
+import Backdrop from '../Backdrop/Backdrop';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const ModalCategories = ({ handleClose, toggle, modalOpen }) => {
+const ModalCategories = ({ toggleCategories, toggleBackDrop, categoriesOpen }) => {
     
     /* Nav Categories */
     const categoryVariants = {
@@ -27,20 +27,21 @@ const ModalCategories = ({ handleClose, toggle, modalOpen }) => {
         >
             
             {/* If modalOpen state is true modal open | else if state is false modal hidden */}
-            { modalOpen && (
+            { categoriesOpen && (
                 
                 /* opaque background to target click event to toggle state to false & hide modal */
-                <Backdrop toggle={toggle}>
+                <Backdrop toggleBackDrop={toggleBackDrop}>
                 
                     <motion.section 
                         className='navbar-categories'
+                        /* Stops event bubble from happening which allows for backdrop to close when clicked and modal to stay open when clicked */
                         onClick={(e) => e.stopPropagation()}
                         variants={ categoryVariants }
                         initial='hidden'
                         animate='visible'
                     >
                         <h2> Browse Categories </h2>
-                        <p className='close' onClick={ () => toggle() }> X </p>
+                        <p className='close' onClick={ () => toggleCategories() }> X </p>
                     </motion.section>
                 </Backdrop>
 
