@@ -1,5 +1,5 @@
 import './ModalSignUp.css';
-import Backdrop from '../Backdrop/Backdrop';
+import Backdrop from '../BackDrop/BackDrop';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const ModalSignUp = ({ signUpOpen, toggleBackDrop, toggleSignUp }) => {
