@@ -1,5 +1,5 @@
 import './ModalCategories.css';
-import Backdrop from '../Backdrop/Backdrop';
+import Backdrop from '../BackDrop/BackDrop';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const ModalCategories = ({ toggleCategories, toggleBackDrop, categoriesOpen }) => {

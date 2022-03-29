@@ -12,7 +12,6 @@ import Settings from './pages/Settings/Settings';
 //* Components
 import Navbar from './components/Navbar/Navbar';
 import ModalCategories from './components/Modal_Categories/ModalCategories';
-import Backdrop from './components/Backdrop/Backdrop';
 import Footer from './components/Footer/Footer'
 
 function App() {
