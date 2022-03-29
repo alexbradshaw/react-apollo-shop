@@ -11,18 +11,18 @@ import Settings from './pages/Settings/Settings';
 
 //* Components
 import Navbar from './components/Navbar/Navbar';
+import ModalCategories from './components/Modal_Categories/ModalCategories';
 import { AnimatePresence } from 'framer-motion';
 import Footer from './components/Footer/Footer'
 
 function App() {
-
 
   const [modalOpen, setModalOpen] = useState(false);
 
   const toggle= () => {
     console.log('Toggle clicked', modalOpen)
     modalOpen ? setModalOpen(false) : setModalOpen(true);
-  }
+  };
 
   const close = () => {
     console.log('Close clicked')
@@ -48,24 +48,23 @@ function App() {
   return (
     
     <div data-theme={theme}>
-      <AnimatePresence
-        initial={false}
-        exitBeforeEnter={true}
-      >
-        <Navbar modalOpen={modalOpen} setModalOpen={setModalOpen} open={open} close= {close} toggle={toggle} theme={theme}/>
-        <Routes>
+      
+      <Navbar modalOpen={modalOpen} setModalOpen={setModalOpen} open={open} close= {close} toggle={toggle} theme={theme}/>
+      <ModalCategories toggle={toggle} modalOpen={modalOpen}/>
 
-          <Route path='/' exact element={< Landing /> }/>
-          <Route path='/settings' exact element={< Settings theme={theme} switchTheme={switchTheme}/> } />
-          {/* Temporary route */}
-          <Route path='/register' exact element={< Register /> }/>
-          <Route path='/footer' exact element={< Footer /> }/>
+      <Routes>
 
-        </Routes>
-      </AnimatePresence>
-      </div>
+        <Route path='/' exact element={< Landing /> }/>
+        <Route path='/settings' exact element={< Settings theme={theme} switchTheme={switchTheme}/> } />
+        {/* Temporary route */}
+        <Route path='/register' exact element={< Register /> }/>
+        <Route path='/footer' exact element={< Footer /> }/>
+
+      </Routes>
+
+    </div>
 
   );
-}
+};
 
 export default App;
