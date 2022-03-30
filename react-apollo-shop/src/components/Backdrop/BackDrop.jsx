@@ -2,7 +2,7 @@ import './BackDrop.css';
 import { motion } from 'framer-motion';
 
 //! This should wrap all modals
-const Backdrop = ({ children, toggleBackDrop }) => {
+const BackDrop = ({ children, toggleBackDrop }) => {
 
     const backdropVariants = {
         hidden: { 
@@ -35,4 +35,4 @@ const Backdrop = ({ children, toggleBackDrop }) => {
      );
 };
  
-export default Backdrop;
+export default BackDrop;
