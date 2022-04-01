@@ -25,6 +25,14 @@
         grid-template-rows: 10px;
     }
 
+    .btn-register {
+        align-self: center;
+        grid-column: 9 / 12;
+        height: 3.25vh;
+        border-radius: 25px;
+        font-weight: bold;
+    }
+
     .username, .email, .password, .btn {
         align-items: end;
         grid-column: 2 / 12;

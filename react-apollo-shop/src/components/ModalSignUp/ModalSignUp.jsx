@@ -1,8 +1,11 @@
 import './ModalSignUp.css';
+import React, { useState } from 'react';
 import Backdrop from '../BackDrop/BackDrop';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const ModalSignUp = ({ signUpOpen, toggleBackDrop, toggleSignUp }) => {
+const ModalSignUp = ({ signUpOpen, toggleBackDrop, toggleSignUp, showRegisterForm, showRegister }) => {
+
+  
 
     return (
         <AnimatePresence
@@ -17,19 +20,33 @@ const ModalSignUp = ({ signUpOpen, toggleBackDrop, toggleSignUp }) => {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <p onClick={ () => toggleSignUp() }> X </p>
-                        <h3> Create your account </h3>
+                        <h3> Sign In </h3>
+
+                        
+                        <button 
+                            className='btn-register'
+                            onClick={() => showRegisterForm()}
+                        >
+                            Register 
+                        </button>
                         <input
                             className='username'
                             name='username' 
                             type="text" 
                             placeholder='Username'
                         />
+
+                        {/* //* STARTING POINT - toggle form from register to signup */}
+                        { showRegister && (
+                        
                         <input
                             className='email'
                             name='email' 
                             type="text" 
                             placeholder='Email'
                         />
+                        )}
+
                         <input
                             className='password'
                             name='password' 
@@ -37,7 +54,8 @@ const ModalSignUp = ({ signUpOpen, toggleBackDrop, toggleSignUp }) => {
                             placeholder='Password'
                         />
                         <button
-                            className='register-btn btn' 
+                            className='register-btn btn'
+                            type='submit'
                         >
                             Submit
                         </button>

@@ -51,6 +51,13 @@ function App() {
     setTheme(newTheme);
   };
 
+  const [ showRegister, setShowRegister ] = useState(false);
+
+  const showRegisterForm = () => {
+      console.log('Show register clicked!', showRegister);
+      showRegister ? setShowRegister(false) : setShowRegister(true);
+  };
+
   return (
     
     <div data-theme={theme}>
@@ -71,6 +78,8 @@ function App() {
       <ModalSignUp toggleSignUp={toggleSignUp} 
         signUpOpen={signUpOpen}
         toggleBackDrop={toggleBackDrop}
+        showRegister={showRegister}
+        showRegisterForm={showRegisterForm}
       /> 
       <Routes>
 
