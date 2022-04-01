@@ -1,74 +1,61 @@
 :root {
-    --text-size: xx-large;
-    --margin: 0%;
-    --padding: 2%;
+    --text-size: x-large;
+    --bgcolor: rgb(0, 5, 160)
   }
 
-  .mainContent{
+  .footerDiv {
+      display: flex;
+      justify-content: center;
+      padding: 3%;
+      background-color: var(--bgcolor);
+      flex-wrap: nowrap;
+      border: black 2px solid;
+  }
+
+  .buttonContainer {
     display: flex;
-    width: 44vw;
-    height: 70vh;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    overflow: hidden;
-    margin: 15vh 28vw;
-    border: 3px black solid;
-    align-content: flex-start;
-}
+    width: 50%;
+    background-color: var(--bgcolor);
+    justify-content: start;
+  }
 
-.collapsibleContainer {
-    border: 0;
-    text-align: start;
-    width: 100%;
-    border-bottom: 3px black solid;
-    padding: var(--padding);
-    font-size: var(--text-size);
-    margin: var(--margin);
-}
+  .buttonContainer div {
+      width: 50%;
+      background-color: var(--bgcolor);
+      display: flex;
+      align-items: center;
+  }
 
-.settingsButtons {
-    width: 100%;
-    border-bottom: 3px black solid;
-    background: none;
-    font: inherit;
-    font-size: var(--text-size);
-    margin: var(--margin);
-    padding: var(--padding);
-}
+  .buttonContainer div:hover {
+    color: white;
+  }
 
-.collapsibleContainer:active{
-    color: gray
-}
+  .buttonContainer button {
+      border: none;
+      background-color: var(--bgcolor);
+      color: white;
+      margin: 0% 2%;
+      font: inherit;
+      font-size: var(--text-size);
+  }
 
-.settingsButtons:active {
-    color: gray
-}
+  .copyright {
+      display: flex;
+      justify-content: end;
+      background-color: var(--bgcolor);
+      color: white;
+      font-size: var(--text-size);
+      width: 50%;
+      margin: .3% 0% 0%;
+  }
 
 @media only screen and (max-width: 1007px) {
 
     :root {
-        --text-size: x-large;
-        --margin: 0%;
-        --padding: 5%;
+        --text-size: large;
       }
 
-    .mainContent{
-        width: 90vw;
-        height: 80vh;
-        padding: 10vh 5vw;
-        margin: 0;
-        border: 0;
-        align-content: normal;
-    }
-    
-    .collapsibleContainer {
-        border: var(--border-lg);
-        text-align: center;
-    }
-    
-    .settingsButtons {
-        border: var(--border-lg);
-    }
+
     
 
 }
@@ -77,9 +64,7 @@
 @media only screen and (max-width: 640px) {
 
     :root {
-        --text-size: large;
-        --margin: 0%;
-        --padding: 5%;
+        --text-size: small;
       }
       
 }

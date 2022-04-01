@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 //! No longer use Switch | Instead use Routes
 import { Routes, Route } from 'react-router-dom';
 import useLocalStorage from 'use-local-storage';
+import translate from "translate";
 
 //* Pages
 import Landing from './pages/Landing/Landing';
@@ -13,6 +14,7 @@ import Settings from './pages/Settings/Settings';
 import Navbar from './components/Navbar/Navbar';
 import ModalCategories from './components/Modal_Categories/ModalCategories';
 import Footer from './components/Footer/Footer'
+
 
 function App() {
 
@@ -51,12 +53,17 @@ function App() {
     setTheme(newTheme);
   };
 
+
   const [ showRegister, setShowRegister ] = useState(false);
 
   const showRegisterForm = () => {
       console.log('Show register clicked!', showRegister);
       showRegister ? setShowRegister(false) : setShowRegister(true);
   };
+
+  translate.engine = "google"; 
+  translate.key = "AIzaSyBeWvW7mmVeht7ldMTPr0RXyNrJ4fQcroA";
+
 
   return (
     
@@ -81,6 +88,7 @@ function App() {
         showRegister={showRegister}
         showRegisterForm={showRegisterForm}
       /> 
+      
       <Routes>
 
         {/* Pages */}
@@ -90,7 +98,7 @@ function App() {
         <Route path='/footer' exact element={< Footer /> }/>
 
       </Routes>
-
+      < Footer />
     </div>
 
   );
