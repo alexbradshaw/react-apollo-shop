@@ -53,8 +53,17 @@ function App() {
     setTheme(newTheme);
   };
 
+
+  const [ showRegister, setShowRegister ] = useState(false);
+
+  const showRegisterForm = () => {
+      console.log('Show register clicked!', showRegister);
+      showRegister ? setShowRegister(false) : setShowRegister(true);
+  };
+
   translate.engine = "google"; 
   translate.key = "AIzaSyBeWvW7mmVeht7ldMTPr0RXyNrJ4fQcroA";
+
 
   return (
     
@@ -76,6 +85,8 @@ function App() {
       <ModalSignUp toggleSignUp={toggleSignUp} 
         signUpOpen={signUpOpen}
         toggleBackDrop={toggleBackDrop}
+        showRegister={showRegister}
+        showRegisterForm={showRegisterForm}
       /> 
       
       <Routes>
