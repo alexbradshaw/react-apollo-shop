@@ -4,6 +4,22 @@ const { ApolloServer } = require('apollo-server-express');
 const db = require('./config/connection');
 const { typeDefs, resolvers } = require('./schemas');
 
+const asciify = require('asciify-image');
+
+const asciiVarients = {
+  color: true,
+  fit:    'box',
+  width:  140,
+  height: 70
+};
+
+const asciiArt = asciify('./images/alex_ascii.jpeg', asciiVarients, (err, asciified) => {
+  if (err) throw err;
+
+  // Print to console
+  console.log(asciified);
+});
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
@@ -32,3 +48,5 @@ db.once('open', () => {
     console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
   });
 });
+
+console.log(asciiArt);
