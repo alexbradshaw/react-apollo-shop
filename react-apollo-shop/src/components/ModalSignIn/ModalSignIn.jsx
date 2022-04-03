@@ -1,31 +1,43 @@
-import './ModalSignUp.css';
-import React, { useState } from 'react';
+import './ModalSignIn.css';
 import Backdrop from '../BackDrop/BackDrop';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const ModalSignUp = ({ signUpOpen, toggleBackDrop, toggleSignUp, showRegisterForm, showRegister }) => {
+const ModalSignIn = ({ showSignIn, toggleBackDrop, setShowRegister, showRegister }) => {
 
-  
+    const signInVariants = {
+        hidden: {
+            y: '100vw',
+            opacity: 0
+        },
+        visible: {
+            y: '0',
+            opacity: 1,
+            transition: {
+                duration: 0,
+            }
+        }
+    };
 
     return (
         <AnimatePresence
             initial={false}
             exitBeforeEnter={true}
         >
-            { signUpOpen && (
+            { showSignIn && (
             
                 <Backdrop toggleBackDrop={toggleBackDrop} >
                     <motion.div 
                         className='register-modal-container'
                         onClick={(e) => e.stopPropagation()}
+                        variants={signInVariants}
                     >
-                        <p onClick={ () => toggleSignUp() }> X </p>
+                        <p onClick={toggleBackDrop}> X </p>
                         <h3> Sign In </h3>
 
                         
                         <button 
                             className='btn-register'
-                            onClick={() => showRegisterForm()}
+                            onClick={() => showRegister ? setShowRegister(false) : setShowRegister(true)}
                         >
                             Register 
                         </button>
@@ -77,4 +89,4 @@ const ModalSignUp = ({ signUpOpen, toggleBackDrop, toggleSignUp, showRegisterFor
     )
 };
 
-export default ModalSignUp;
+export default ModalSignIn;

@@ -9,8 +9,8 @@ const asciify = require('asciify-image');
 const asciiVarients = {
   color: true,
   fit:    'box',
-  width:  140,
-  height: 70
+  width:  120,
+  height: 60
 };
 
 const asciiArt = asciify('./images/alex_ascii.jpeg', asciiVarients, (err, asciified) => {

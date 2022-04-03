@@ -7,87 +7,71 @@ import translate from "translate";
 
 //* Pages
 import Landing from './pages/Landing/Landing';
-import ModalSignUp from './components/ModalSignUp/ModalSignUp';
+import ModalSignIn from './components/ModalSignIn/ModalSignIn';
 import Settings from './pages/Settings/Settings';
 
 //* Components
 import Navbar from './components/Navbar/Navbar';
-import ModalCategories from './components/Modal_Categories/ModalCategories';
-import Footer from './components/Footer/Footer'
+import ModalCategories from './components/ModalCategories/ModalCategories';
+import ModalCart from './components/ModalCart/ModalCart';
+import Footer from './components/Footer/Footer';
 
-
-function App() {
-
-  const [categoriesOpen, setCategoriesOpen] = useState(false);
-
-  //? Might not need this | possibly use toggleBackDrop
-  const toggleCategories = () => {
-    console.log('Toggle categories clicked', categoriesOpen)
-    categoriesOpen ? setCategoriesOpen(false) : setCategoriesOpen(true);
-  };
-
-  const [signUpOpen, setSignUpOpen] = useState(false);
-
-  //? Might not need this | possibly use toggleBackDrop
-  const toggleSignUp = () => {
-    console.log('Toggle clicked', categoriesOpen)
-    signUpOpen ? setSignUpOpen(false) : setSignUpOpen(true);
-  };
-
-  
-  //! When backdrop for modals is clicked set all modal states to false
-  const toggleBackDrop = () => {
-    console.log('Toggle Backdrop clicked!');
-    setSignUpOpen(false);
-    setCategoriesOpen(false);
-  };
-
+const App = () => {
 
   //! Light/Dark mode state saved to localStorage
   const [ theme, setTheme ] = useLocalStorage('theme', 'theme' ? 'dark' : 'light');
 
+  const [ showCategories, setShowCategories ] = useState(false);
+  const [ showCart, setShowCart ] = useState(false);
+  const [ showRegister, setShowRegister ] = useState(false);
+  const [ showSignIn, setShowSignIn ] = useState(false);
+
   //! pass as a prop to Settings for light/dark mode toggle
   const switchTheme = () => {
-    console.log('Switch Theme clicked!')
+    console.log('Switch Theme clicked!');
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
   };
 
-
-  const [ showRegister, setShowRegister ] = useState(false);
-
-  const showRegisterForm = () => {
-      console.log('Show register clicked!', showRegister);
-      showRegister ? setShowRegister(false) : setShowRegister(true);
+  //! When backdrop for modals is clicked set all modal states to false
+  const toggleBackDrop = () => {
+    console.log('Toggle Backdrop clicked!');
+    setShowCategories(false);
+    setShowSignIn(false);
+    setShowRegister(false);
+    setShowCart(false);
   };
 
   translate.engine = "google"; 
   translate.key = "AIzaSyBeWvW7mmVeht7ldMTPr0RXyNrJ4fQcroA";
-
 
   return (
     
     <div data-theme={theme}>
       
       {/* Components */}
-      <Navbar modalOpen={categoriesOpen} 
-        setCategoriesOpen={setCategoriesOpen} 
-        toggleCategories={toggleCategories}
+      <Navbar
+        setShowCategories={setShowCategories}
+        setShowSignIn={setShowSignIn}
         toggleBackDrop={toggleBackDrop}
-        toggleSignUp={toggleSignUp}
+        setShowCart={setShowCart}
         theme={theme}
       />
 
-      <ModalCategories toggleCategories={toggleCategories} 
-        categoriesOpen={categoriesOpen}
+      <ModalCategories
+        showCategories={showCategories}
         toggleBackDrop={toggleBackDrop}
       />
-      <ModalSignUp toggleSignUp={toggleSignUp} 
-        signUpOpen={signUpOpen}
+      <ModalSignIn
+        showSignIn={showSignIn}
         toggleBackDrop={toggleBackDrop}
         showRegister={showRegister}
-        showRegisterForm={showRegisterForm}
+        setShowRegister={setShowRegister}
       /> 
+      <ModalCart 
+        showCart={showCart}
+        toggleBackDrop={toggleBackDrop}
+      />
       
       <Routes>
 
@@ -95,6 +79,7 @@ function App() {
         <Route path='/' exact element={< Landing /> }/>
         <Route path='/settings' exact element={< Settings theme={theme} switchTheme={switchTheme}/> } />
         
+        {/* Temporary Route */}
         <Route path='/footer' exact element={< Footer /> }/>
 
       </Routes>

@@ -21,12 +21,13 @@ const BackDrop = ({ children, toggleBackDrop }) => {
 
     /* opaque background to target click event to toggle state to false & hide modal */
     return ( 
-        <motion.div className='backdrop'
-                    onClick={toggleBackDrop}
-                    variants={ backdropVariants }
-                    initial='hidden'
-                    animate='visible'
-                    exit='exit'
+        <motion.div 
+            className='backdrop'
+            onClick={toggleBackDrop}
+            variants={backdropVariants}
+            initial='hidden'
+            animate='visible'
+            exit='exit'
         >
             {/* Allows for child components to be nested */}
             { children }
