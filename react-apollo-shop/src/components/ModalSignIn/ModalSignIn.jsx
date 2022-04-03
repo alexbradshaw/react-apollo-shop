@@ -32,15 +32,29 @@ const ModalSignIn = ({ showSignIn, toggleBackDrop, setShowRegister, showRegister
                         variants={signInVariants}
                     >
                         <p onClick={toggleBackDrop}> X </p>
-                        <h3> Sign In </h3>
 
+                        {/* Conditionally render SignIn/Register BTN */}
+                        { !showRegister ?
+                            (<>
+                                <h3> Sign In  </h3>
+                                <button 
+                                    className='btn-register'
+                                    onClick={() => showRegister ? setShowRegister(false) : setShowRegister(true)}
+                                >
+                                    Register 
+                                </button>
+                            </>) :
+                            (<>
+                                <h3> Register </h3>
+                                <button 
+                                    className='btn-register'
+                                    onClick={() => showRegister ? setShowRegister(false) : setShowRegister(true)}
+                                >
+                                    Sign In 
+                                </button>
+                            </>)
+                        }
                         
-                        <button 
-                            className='btn-register'
-                            onClick={() => showRegister ? setShowRegister(false) : setShowRegister(true)}
-                        >
-                            Register 
-                        </button>
                         <input
                             className='username'
                             name='username' 
@@ -58,7 +72,7 @@ const ModalSignIn = ({ showSignIn, toggleBackDrop, setShowRegister, showRegister
                             placeholder='Email'
                         />
                         )}
-
+    
                         <input
                             className='password'
                             name='password' 
@@ -71,10 +85,11 @@ const ModalSignIn = ({ showSignIn, toggleBackDrop, setShowRegister, showRegister
                         >
                             Submit
                         </button>
-                        <div className='hr'>
-                            
-                        </div>
+                      
+                        <div className='hr' />
                         <span>OR</span>
+                        
+                        
                         <button
                             className='google-btn btn' 
                         >
