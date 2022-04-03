@@ -4,11 +4,12 @@
 
     .register-modal-container {
         display: grid;
-        align-self: center;
+        position: relative;
+        top: 11vh;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: repeat(12, 1fr);
         grid-column: 4 / 10;
-        grid-row: 2 / 11;
+        grid-row: 1 / 10;
         border: var(--border);
         /* row gap / column gap */
         gap: 10px 0;

@@ -2,16 +2,16 @@ import './ModalCategories.css';
 import Backdrop from '../BackDrop/BackDrop';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const ModalCategories = ({ toggleCategories, toggleBackDrop, categoriesOpen }) => {
+const ModalCategories = ({ toggleBackDrop, showCategories }) => {
     
-    /* Nav Categories */
+    /* Categories */
     const categoryVariants = {
         hidden: {
-            y: '100vh',
+            x: '-100vw',
             opacity: 0
         },
         visible: {
-            y: '0',
+            x: '0',
             opacity: 1,
             transition: {
                 duration: 0,
@@ -27,7 +27,7 @@ const ModalCategories = ({ toggleCategories, toggleBackDrop, categoriesOpen }) =
         >
             
             {/* If modalOpen state is true modal open | else if state is false modal hidden */}
-            { categoriesOpen && (
+            { showCategories && (
                 
                 /* opaque background to target click event to toggle state to false & hide modal */
                 <Backdrop toggleBackDrop={toggleBackDrop}>
@@ -41,10 +41,10 @@ const ModalCategories = ({ toggleCategories, toggleBackDrop, categoriesOpen }) =
                         animate='visible'
                     >
                         <h2> Browse Categories </h2>
-                        <p className='close' onClick={ () => toggleCategories() }> X </p>
+                        <p className='close' onClick={toggleBackDrop}> X </p>
                     </motion.section>
                 </Backdrop>
-
+                
             )}
 
         </AnimatePresence>

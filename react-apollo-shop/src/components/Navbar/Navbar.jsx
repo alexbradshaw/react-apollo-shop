@@ -1,7 +1,4 @@
 import './Navbar.css';
-import React, { useState } from 'react';
-//* Framer Motion
-import { motion } from 'framer-motion';
 
 //* Images
 import burgerMenuDark from './imgs/burger_menu_dark.png';
@@ -10,7 +7,7 @@ import shoppingCartDark from './imgs/shopping_cart_dark.png';
 import shoppingCartLight from './imgs/shopping_cart_light.png';
 import search from './imgs/search.png';
 
-const Navbar = ({ theme, toggleCategories, toggleSignUp }) => {
+const Navbar = ({ theme, setShowCategories, setShowSignIn, setShowCart }) => {
 
     return (
         
@@ -20,7 +17,7 @@ const Navbar = ({ theme, toggleCategories, toggleSignUp }) => {
             <img className='burger-menu'
                 /* conditionally renders dark or light burger menu icon */
                 src={theme === 'light' ? burgerMenuDark : burgerMenuLight}
-                onClick={() => toggleCategories()}
+                onClick={() => setShowCategories(true)}
             />
             <input className='search-bar'
                 type="text" 
@@ -32,19 +29,18 @@ const Navbar = ({ theme, toggleCategories, toggleSignUp }) => {
             />
             <a href='#' 
                 className='sign-in' 
-                onClick={() => toggleSignUp()}
+                onClick={() => setShowSignIn(true)}
                 > 
                 Sign in 
             </a>
             <img className='shopping-cart'
+                onClick={() => setShowCart(true)}
                 /* conditionally renders dark or light cart icon */
                 src={theme === 'light' ? shoppingCartDark : shoppingCartLight}
             />
 
         </nav>
-        
     )
-
 };
 
 export default Navbar;

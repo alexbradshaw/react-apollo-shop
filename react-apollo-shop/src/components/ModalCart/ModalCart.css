@@ -1,0 +1,46 @@
+@media screen and (max-width: 1007px) {
+
+    .cart {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        height: 89vh;
+        width: 100vw;
+
+        background-color: var(--background);
+    }
+
+    .cart h3 {
+        grid-column: 1 / 13;
+        align-self: center;
+        justify-self: center;
+        margin: 0;
+
+        font-size: 4vh;
+    }
+
+    .cart p {
+        grid-column: 11/ 13;
+        align-self: center;
+        justify-self: center;
+        margin: 0;
+
+        font-size: 4vh;
+        font-weight: bold;
+        
+    }
+
+}
+
+
+@media screen and (max-width: 640px) {
+    
+    .cart h2 {
+        font-size: 3vh;
+        
+    }
+}
