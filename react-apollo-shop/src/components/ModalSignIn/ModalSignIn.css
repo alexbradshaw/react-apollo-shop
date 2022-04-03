@@ -40,6 +40,10 @@
         text-indent: 10px;
     }
 
+    .google-btn {
+        grid-row: 8 / 9;
+    }
+
     .btn {
         height: 5vh;
     }
@@ -47,13 +51,13 @@
     .hr {
         border-bottom: var(--border);
         grid-column: 1 / 13;
-        grid-row: 6 / 7;
+        grid-row: 7 / 8;
         align-self: center;
     }
 
     .register-modal-container span {
         grid-column: 6 / 8;
-        grid-row: 6 / 7;
+        grid-row: 7 / 8;
         text-align: center;
         align-self: center;
         background-color: var(--background);
@@ -73,5 +77,8 @@
 /* Media query small viewports */
 @media screen and (max-width: 640px) {
 
+    .register-modal-container {
+        grid-column: 2 / 12;
+    }
 
 }
