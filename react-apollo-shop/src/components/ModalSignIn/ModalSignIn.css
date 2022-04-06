@@ -11,10 +11,9 @@
         grid-column: 4 / 10;
         grid-row: 1 / 10;
         border: var(--border);
-        /* row gap / column gap */
-        gap: 10px 0;
         z-index: 1;
         background-color: var(--background);
+        
     }
 
     h3 {
@@ -34,10 +33,48 @@
         font-weight: bold;
     }
 
+    .signin-form {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(4, 1fr) auto repeat(7, 1fr);
+        grid-column: 1 / 13;
+        grid-row: 1 / 13;
+        /* row gap / column gap */
+        gap: 10px 0;
+        z-index: 1;
+        background-color: var(--background);
+        
+    }
+
+    .register-form {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        grid-column: 1 / 13;
+        grid-row: 1 / 13;
+        /* row gap / column gap */
+        gap: 10px 0;
+        z-index: 1;
+        background-color: var(--background);
+       
+    }
+
     .username, .email, .password, .btn {
         align-items: end;
         grid-column: 2 / 12;
         text-indent: 10px;
+        transition: none;
+    }
+
+    .register-modal-container form input[type='checkbox'] {
+        justify-self: center;
+        grid-column: 2 / 3;
+        transition: none;
+    }
+
+    .register-modal-container form label {
+        align-self: center;
+        grid-column: 3 / 7;
     }
 
     .google-btn {

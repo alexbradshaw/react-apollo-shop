@@ -34,7 +34,8 @@ const App = () => {
   };
 
   //! When backdrop for modals is clicked set all modal states to false
-  const toggleBackDrop = () => {
+  const toggleBackDrop = (e) => {
+    e.stopPropagation();
     console.log('Toggle Backdrop clicked!');
     setShowCategories(false);
     setShowSignIn(false);
