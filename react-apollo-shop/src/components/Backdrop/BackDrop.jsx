@@ -11,11 +11,9 @@ const BackDrop = ({ children, toggleBackDrop }) => {
         visible: { 
             opacity: 1
         },
+        //! exit animation can only be used on the first animatable child of the AnimatePresence component (in this example the Backdrop component) 
         exit: {
-            y: '10vh',
-            transition: {
-                duration: 0,
-            }
+           
         }
     };
 
@@ -26,7 +24,7 @@ const BackDrop = ({ children, toggleBackDrop }) => {
             onClick={toggleBackDrop}
             variants={backdropVariants}
             initial='hidden'
-            animate='visible'
+            animate='visible' 
             exit='exit'
         >
             {/* Allows for child components to be nested */}

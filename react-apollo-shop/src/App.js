@@ -27,6 +27,7 @@ const App = () => {
   const [ showSignIn, setShowSignIn ] = useState(false);
 
   //! pass as a prop to Settings for light/dark mode toggle
+  //? could possibly move this to the settings component
   const switchTheme = () => {
     console.log('Switch Theme clicked!');
     const newTheme = theme === 'light' ? 'dark' : 'light';

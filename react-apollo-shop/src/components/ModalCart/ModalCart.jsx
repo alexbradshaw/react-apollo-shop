@@ -7,7 +7,7 @@ const ModalCart = ({ toggleBackDrop, showCart }) => {
     const cartVariants = {
         hidden: {
             x: '100vw',
-            opacity: .5
+            opacity: 0
         },
         visible: {
             x: '0',

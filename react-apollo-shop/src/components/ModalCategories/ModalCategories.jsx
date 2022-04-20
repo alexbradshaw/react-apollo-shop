@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 const ModalCategories = ({ toggleBackDrop, showCategories }) => {
     
-    /* Categories */
     const categoryVariants = {
         hidden: {
             x: '-100vw',
