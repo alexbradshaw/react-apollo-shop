@@ -7,7 +7,7 @@ const ModalSignIn = ({ showSignIn, toggleBackDrop, setShowRegister, showRegister
 
     const signInVariants = {
         hidden: {
-            y: '100vw',
+            y: '200vh',
             opacity: 0
         },
         visible: {
@@ -42,6 +42,7 @@ const ModalSignIn = ({ showSignIn, toggleBackDrop, setShowRegister, showRegister
         setRegisterState({ ...setRegisterState, [ name ]: value });
         console.log(registerState);
     }
+    
 
     const handleRegisterForm = (e) => {
 
@@ -60,6 +61,7 @@ const ModalSignIn = ({ showSignIn, toggleBackDrop, setShowRegister, showRegister
         setSignInState({ ...setSignInState, [ name ]: value });
         console.log(signInState);
     }
+    
 
     const handleSignInForm = (e) => {
 
@@ -83,7 +85,7 @@ const ModalSignIn = ({ showSignIn, toggleBackDrop, setShowRegister, showRegister
                         { !showRegister ? (
                             /* signin modal */
                             <form className='signin-form' 
-                                
+                                onClick={(e) => e.preventDefault()}
                                 onSubmit={handleSignInForm}
                                 onChange={handleSignInChange}
                             >
@@ -91,8 +93,7 @@ const ModalSignIn = ({ showSignIn, toggleBackDrop, setShowRegister, showRegister
                                 <h3> Sign In </h3>
                                 <button 
                                         className='btn-register'
-                                        onClick={(e) => {
-                                            e.preventDefault();
+                                        onClick={() => { 
                                             showRegister ? setShowRegister(false) : setShowRegister(true)}
                                         }
                                 >
@@ -103,14 +104,12 @@ const ModalSignIn = ({ showSignIn, toggleBackDrop, setShowRegister, showRegister
                                     name='username' 
                                     type="text" 
                                     placeholder='Username'
-                                    /* onChange={handleLoginChange}  */
                                 />
                                 <input
                                     className='password'
                                     name='password' 
                                     type="password" 
                                     placeholder='Password'
-                                    /* onChange={handleLoginChange}  */
                                 />
                                 <input 
                                     type='checkbox'
@@ -120,7 +119,7 @@ const ModalSignIn = ({ showSignIn, toggleBackDrop, setShowRegister, showRegister
                                 <label> Remember Me</label>
                                 <button
                                     className='register-btn btn'
-                                    onClick={(e) => e.preventDefault()}
+                                    
                                 >
                                     Submit
                                 </button>
@@ -131,13 +130,12 @@ const ModalSignIn = ({ showSignIn, toggleBackDrop, setShowRegister, showRegister
                                 
                                 <button
                                     className='google-btn btn'
-                                    onClick={(e) => e.preventDefault()}
                                 >
                                     Continue with Google
                                 </button>
                             </form>
                         ):(
-                            /* register modal */
+                            //! register modal 
                             <form className='register-form' 
                                 onSubmit={handleRegisterForm} 
                                 onClick={(e) => e.preventDefault()}
