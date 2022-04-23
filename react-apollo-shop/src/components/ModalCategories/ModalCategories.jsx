@@ -7,14 +7,11 @@ const ModalCategories = ({ toggleBackDrop, showCategories }) => {
     const categoryVariants = {
         hidden: {
             x: '-100vw',
-            opacity: 0
+            opacity: 1
         },
         visible: {
             x: '0',
             opacity: 1,
-            transition: {
-                duration: 0,
-            }
         }
     };
     
@@ -36,8 +33,7 @@ const ModalCategories = ({ toggleBackDrop, showCategories }) => {
                         /* Stops event bubble from happening which allows for backdrop to close when clicked and modal to stay open when clicked */
                         onClick={(e) => e.stopPropagation()}
                         variants={ categoryVariants }
-                        initial='hidden'
-                        animate='visible'
+                        
                     >
                         <h2> Browse Categories </h2>
                         <p className='close' onClick={toggleBackDrop}> X </p>
