@@ -7,14 +7,11 @@ const ModalCart = ({ toggleBackDrop, showCart }) => {
     const cartVariants = {
         hidden: {
             x: '100vw',
-            opacity: 0
+            opacity: 1
         },
         visible: {
             x: '0',
             opacity: 1,
-            transition: {
-                duration: 0
-            }
         }
     };
 
@@ -28,16 +25,13 @@ const ModalCart = ({ toggleBackDrop, showCart }) => {
            
                 <BackDrop toggleBackDrop={toggleBackDrop}>
 
-                    <motion.section className='cart'
+                    <motion.section 
+                        className='cart'
                         onClick={(e) => e.stopPropagation()}
                         variants={cartVariants}
-                        initial={'hidden'}
-                        animate={'visible'}
-
                     >
                         <p onClick={toggleBackDrop}> X </p>
                         <h3> You have no items in your cart ☹️ </h3>
-
                     </motion.section>
 
                 </BackDrop>
