@@ -7,15 +7,12 @@ const ModalSignIn = ({ showSignIn, toggleBackDrop, setShowRegister, showRegister
 
     const signInVariants = {
         hidden: {
-            y: '200vh',
-            opacity: 0
+            y: '100vh',
+            opacity: 1,
         },
         visible: {
             y: '0',
             opacity: 1,
-            transition: {
-                duration: 0,
-            }
         }
     };
 
@@ -80,6 +77,7 @@ const ModalSignIn = ({ showSignIn, toggleBackDrop, setShowRegister, showRegister
                         className='register-modal-container'
                         onClick={(e) => e.stopPropagation()}
                         variants={signInVariants}
+                        
                     >
 
                         { !showRegister ? (
