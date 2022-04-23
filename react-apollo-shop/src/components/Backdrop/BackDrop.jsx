@@ -8,13 +8,12 @@ const BackDrop = ({ children, toggleBackDrop }) => {
         hidden: {
             x: 0,
             opacity: 0,
-            when: 'afterChildren',
             transition: {
                 opacity: 0,
                 duration: .2,
                 /* transition will wait until child animations are complete to 
                 start 'exit' animation  */
-                
+                when: 'afterChildren',
             } 
         },
         visible: {
@@ -22,7 +21,6 @@ const BackDrop = ({ children, toggleBackDrop }) => {
             opacity: 1,
             transition: {
                 duration: 0,
-                /* when: 'beforeChildren', */
             }
         },
     };
