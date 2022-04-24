@@ -14,6 +14,7 @@ import Settings from './pages/Settings/Settings';
 import Navbar from './components/Navbar/Navbar';
 import ModalCategories from './components/ModalCategories/ModalCategories';
 import ModalCart from './components/ModalCart/ModalCart';
+import Carousel from './components/Carousel/Carousel';
 import Footer from './components/Footer/Footer';
 
 const App = () => {
@@ -59,7 +60,6 @@ const App = () => {
         setShowCart={setShowCart}
         theme={theme}
       />
-
       <ModalCategories
         showCategories={showCategories}
         toggleBackDrop={toggleBackDrop}
@@ -78,7 +78,7 @@ const App = () => {
       <Routes>
 
         {/* Pages */}
-        <Route path='/' exact element={< Landing /> }/>
+        <Route path='/' exact element={< Landing /> } Carousel={Carousel}/>
         <Route path='/settings' exact element={< Settings theme={theme} switchTheme={switchTheme}/> } />
         
         {/* Temporary Route */}
