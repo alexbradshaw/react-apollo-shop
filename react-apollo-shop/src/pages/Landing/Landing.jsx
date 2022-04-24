@@ -1,13 +1,14 @@
 import './Landing.css';
+import Carousel from '../../components/Carousel/Carousel';
 
 const Landing = () => {
 
     return (
         <div className='landing-container'>
             {/* Jumbotron */}
-            <div className='jumbotron'>
-                <h1>Carousel? of random user listings</h1>
-            </div>
+           
+             <Carousel />
+           
 
             {/* Categories */}
             <div className='categories'>

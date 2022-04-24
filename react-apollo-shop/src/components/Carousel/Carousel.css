@@ -1,0 +1,46 @@
+
+/* Medium Viewports */
+@media screen and (max-width: 1007px) {
+
+    .carousel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40vh;
+        width: 90vw;
+        margin: 5vh 0 0 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: var(--border);
+        flex-direction: column;
+    }
+
+    .carousel img {
+        height: inherit;
+        width: inherit;
+        position: absolute;
+        z-index: 0;
+    }
+
+    .carousel .left, .right {
+        position: absolute;
+        height: 3vh;
+        z-index: 1;
+    }
+
+    .carousel .left {
+        align-self: flex-start;
+        margin-left: 2vw;
+    } 
+
+    .carousel .right {
+        align-self: flex-end;
+        margin-right: 2vw;
+    }
+}
+
+/* Small Viewports */
+@media screen and (max-width: 640px) {
+
+    
+
+}
