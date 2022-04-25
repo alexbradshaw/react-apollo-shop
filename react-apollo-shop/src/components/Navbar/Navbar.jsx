@@ -1,4 +1,5 @@
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 //* Images
 import burgerMenuDark from './imgs/burger_menu_dark.png';
@@ -13,7 +14,7 @@ const Navbar = ({ theme, setShowCategories, setShowSignIn, setShowCart }) => {
         
         /* Navbar */
         <nav className='nav-container'>
-            <h4 className='logo'> Trasher 🤘 </h4>
+            <h4 className='logo'> <Link to={'/'}> Trasher 🤘 </Link> </h4>
             <img className='burger-menu'
                 /* conditionally renders dark or light burger menu icon */
                 src={theme === 'light' ? burgerMenuDark : burgerMenuLight}
