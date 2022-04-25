@@ -1,3 +1,7 @@
+.logo a {
+    text-decoration: none;
+}
+
 @media screen and (max-width: 1007px) {
 
     /* Grid container 2 row 12 column grid */
@@ -7,8 +11,8 @@
         grid-template-rows: repeat(2, 1fr);
         height: 11vh;
 
-        /* Border is here only for spacial awareness | REMOVE for production */
-        /* border: 1px solid black; */
+        /* Border is here only for spacial awareness | REMOVE for production 
+        border: 1px solid black; */
 
     }
 
