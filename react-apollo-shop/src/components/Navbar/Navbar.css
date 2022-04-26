@@ -69,6 +69,19 @@
         grid-row: 1 / 2;
     }
 
+    .user-profile {
+        /* justify-self: center;
+        align-self: center; */
+        /* not sure if i'm into the fixed profile icon 🤔 */
+        position: fixed;
+        height: 2.75vh;
+        top: 1.35vh;
+        right: 10vw;
+        /* grid-column: 11 / 12;
+        grid-row: 1 / 2; */
+        
+    }
+
     
 }
 
