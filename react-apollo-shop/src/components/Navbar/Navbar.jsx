@@ -11,15 +11,24 @@ import userProfileDark from './imgs/user_profile_dark.png';
 import userProfileLight from './imgs/user_profile_light.png';
 import search from './imgs/search.png';
 
+//* Components
+import ModalDropDown from '../ModalDropDown/ModalDropDown';
+import { AnimatePresence } from 'framer-motion';
 
 const Navbar = ({ theme, setShowCategories, setShowSignIn, setShowCart }) => {
 
 
     const [ loggedIn, setLoggedIn ] = useState(true);
 
+    const [ showDropDown, setShowDropDown ] = useState(false);
+
     const handleIcons = (dark, light) => {
         return theme === 'light' ? dark : light;
-    }
+    };
+
+    const handleDropDown = () => {
+        return showDropDown ? setShowDropDown(false) : setShowDropDown(true); 
+    };
 
     return (
         
@@ -44,10 +53,11 @@ const Navbar = ({ theme, setShowCategories, setShowSignIn, setShowCart }) => {
                 <img
                     className='user-profile'
                     src={handleIcons(userProfileDark, userProfileLight)}
+                    onClick={handleDropDown}
                 />
             ) : (
                 <a href='#' 
-                    className='sign-in' 
+                    className='sign-in'
                     onClick={() => setShowSignIn(true)}
                     > 
                     Sign in 
@@ -59,6 +69,9 @@ const Navbar = ({ theme, setShowCategories, setShowSignIn, setShowCart }) => {
                 src={handleIcons(shoppingCartDark, shoppingCartLight)}
             />
             
+            { showDropDown &&
+                <ModalDropDown />
+            }
 
         </nav>
     )
