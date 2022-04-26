@@ -10,10 +10,6 @@
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: repeat(2, 1fr);
         height: 11vh;
-
-        /* Border is here only for spacial awareness | REMOVE for production 
-        border: 1px solid black; */
-
     }
 
     .logo {
@@ -70,16 +66,15 @@
     }
 
     .user-profile {
-        /* justify-self: center;
-        align-self: center; */
         /* not sure if i'm into the fixed profile icon 🤔 */
         position: fixed;
         height: 2.75vh;
-        top: 1.35vh;
+        top: 1.45vh;
         right: 10vw;
+        /* justify-self: center;
+        align-self: center; */
         /* grid-column: 11 / 12;
-        grid-row: 1 / 2; */
-        
+        grid-row: 1 / 2; */  
     }
 
     
@@ -123,7 +118,16 @@
 
     .navbar-categories h2 {
         font-size: 3vh;
-        
+    }
+
+    .user-profile {
+         /* not sure if i'm into the fixed profile icon 🤔 */
+         width: 6.75vw;
+         right: 14vw;
+        /* justify-self: center;
+        align-self: center; */
+        /* grid-column: 11 / 12;
+        grid-row: 1 / 2; */
     }
 
 }

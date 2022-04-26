@@ -1,0 +1,32 @@
+/* Large viewports */
+.drop-down a {
+    text-decoration: none;
+}
+
+/* Medium viewports */
+@media screen and (max-width: 1007px) {
+    .drop-down {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 4.25vh;
+        right: 12vw;
+        /* height: 11vh; */
+        /* width: 14vw; */
+        border: var(--border);
+        padding: .5vh;
+    }
+
+    .drop-down a {
+        margin: 1vw;
+    }
+}
+
+/* Small viewports */
+@media screen and (max-width: 640px) {
+
+    .drop-down {
+        right: 17.5vw;
+    }
+    
+}
