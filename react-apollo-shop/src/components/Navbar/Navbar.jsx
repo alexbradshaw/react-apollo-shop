@@ -13,7 +13,7 @@ import search from './imgs/search.png';
 
 //* Components
 import ModalDropDown from '../ModalDropDown/ModalDropDown';
-import { AnimatePresence } from 'framer-motion';
+//import { AnimatePresence } from 'framer-motion';
 
 const Navbar = ({ theme, setShowCategories, setShowSignIn, setShowCart }) => {
 
@@ -35,9 +35,11 @@ const Navbar = ({ theme, setShowCategories, setShowSignIn, setShowCart }) => {
         /* Navbar */
         <nav className='nav-container'>
             <h4 className='logo'> <Link to={'/'}> Trasher 🤘 </Link> </h4>
-            <img className='burger-menu'
+            <img 
+                className='burger-menu'
                 /* conditionally renders dark or light burger menu icon */
                 src={handleIcons(burgerMenuDark, burgerMenuLight)}
+                alt='Navigation bar menu icon'
                 onClick={() => setShowCategories(true)}
             />
             <input className='search-bar'
@@ -45,28 +47,33 @@ const Navbar = ({ theme, setShowCategories, setShowSignIn, setShowCart }) => {
                 placeholder='Search'
                 
             />
-            <img className='search-icon'
-                src={search} 
+            <img 
+                className='search-icon'
+                src={search}
+                alt='Search icon'
             />
 
             { loggedIn ? (
                 <img
                     className='user-profile'
                     src={handleIcons(userProfileDark, userProfileLight)}
+                    alt='User profile icon'
                     onClick={handleDropDown}
                 />
             ) : (
-                <a href='#' 
+                <a href='#sign-in' 
                     className='sign-in'
                     onClick={() => setShowSignIn(true)}
                     > 
                     Sign in 
                 </a>
             )}
-            <img className='shopping-cart'
+            <img 
+                className='shopping-cart'
                 onClick={() => setShowCart(true)}
                 /* conditionally renders dark or light cart icon */
                 src={handleIcons(shoppingCartDark, shoppingCartLight)}
+                alt='Shopping cart icon'
             />
             
             { showDropDown &&
