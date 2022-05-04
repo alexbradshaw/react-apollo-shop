@@ -16,7 +16,7 @@
     display: flex;
     width: 50%;
     background-color: var(--bgcolor);
-    justify-content: start;
+    justify-content: flex-start;
   }
 
   .buttonContainer div {
@@ -41,7 +41,7 @@
 
   .copyright {
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
       background-color: var(--bgcolor);
       color: white;
       font-size: var(--text-size);
