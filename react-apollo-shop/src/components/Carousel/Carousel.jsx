@@ -1,6 +1,6 @@
 import './Carousel.css';
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+//import { motion } from 'framer-motion';
 import { carouselImgs } from './Images';
 
 const Carousel = () => {
@@ -27,7 +27,7 @@ const Carousel = () => {
                 alt="Random photo carousel of random user listings" 
             />
             
-            {imgIndex > 0 && <button 
+            {/* {imgIndex > 0 && <button 
                 className='left'
                 onClick={decrementIndex(1)}
             >
@@ -39,7 +39,7 @@ const Carousel = () => {
                 onClick={incrementIndex(1)}
             > 
                 right 
-            </button>}
+            </button>} */}
 
         </div>
         

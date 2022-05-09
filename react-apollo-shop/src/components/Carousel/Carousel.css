@@ -11,21 +11,23 @@
         margin: 5vh 0 0 0;
         background-color: rgba(0, 0, 0, 0.5);
         border: var(--border);
+        border-radius: var(--border-radius);
         flex-direction: column;
     }
 
     .carousel img {
         height: inherit;
-        max-width: 100%;
+        width: inherit;
         position: absolute;
         z-index: 0;
+        border-radius: var(--border-radius)
     }
 
-    .carousel .left, .right {
+    /* .carousel .left, .right {
         position: absolute;
         height: 3vh;
         z-index: 1;
-    }
+    } 
 
     .carousel .left {
         align-self: flex-start;
@@ -36,6 +38,7 @@
         align-self: flex-end;
         margin-right: 2vw;
     }
+    */
 }
 
 /* Small Viewports */
