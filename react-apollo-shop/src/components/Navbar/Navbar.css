@@ -67,14 +67,13 @@
 
     .user-profile {
         /* not sure if i'm into the fixed profile icon 🤔 */
-        position: fixed;
+        /* position: fixed; */
         height: 2.75vh;
         top: 1.45vh;
-        right: 10vw;
-        /* justify-self: center;
-        align-self: center; */
-        /* grid-column: 11 / 12;
-        grid-row: 1 / 2; */  
+        justify-self: center;
+        align-self: center;
+        grid-column: 10 / 12;
+        grid-row: 1 / 2;
     }
 
     

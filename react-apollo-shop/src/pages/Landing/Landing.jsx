@@ -1,7 +1,12 @@
 import './Landing.css';
 import Carousel from '../../components/Carousel/Carousel';
+import { householdImgs } from './images';
 
 const Landing = () => {
+
+    const generateImg = () => {
+        
+    };
 
     return (
         <div className='landing-container'>
@@ -9,20 +14,20 @@ const Landing = () => {
            
              <Carousel />
            
-
             {/* Categories */}
             <div className='categories'>
-                <span><a href='#'> Electronics </a>|</span>
-                <span><a href='#'> Household </a>|</span>
-                <span><a href='#'> Apparel </a>|</span>
-                <a href='#'> Sporting </a>
+                <button> Electronics </button>
+                <button > Household </button>
+                <button> Apparel </button>
+                <button> Sporting </button>
+                <hr></hr>
             </div>
 
             {/* Categories Cards */}
             <div className='cards'>
-                <div className='card-1'> Item </div>
-                <div className='card-2'> Item </div>
-                <div className='card-3'> Item </div>
+                <img src={`../images/${householdImgs[0].path}`} className='card-1' alt='Household item #1'/>
+                <img src={`../images/${householdImgs[2].path}`} className='card-2' alt='Household item #2'/>
+                <img src={`../images/${householdImgs[3].path}`} className='card-3' alt='Household item #3'/>
             </div>
 
         </div>

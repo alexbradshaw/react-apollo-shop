@@ -4,6 +4,11 @@
   --text-primary: rgb(0, 0, 0);
   --border: 1px solid rgb(0, 0, 0);
   --border-lg: 3px solid rgb(0, 0, 0);
+  --border-radius: 6px;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  overflow-y: scroll; 
+  --hover-background: linear-gradient(180deg, white 95%, black 5%);
 }
 
 /* Dark mode */
@@ -12,6 +17,11 @@
   --text-primary: rgb(255, 255, 255);
   --border: 1px solid rgb(255, 255, 255);
   --border-lg: 3px solid rgb(255, 255, 255);
+  --hover-background: linear-gradient(180deg, black 95%, white 5%);
+}
+
+html::-webkit-scrollbar {
+  display: none; 
 }
 
 body {
