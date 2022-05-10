@@ -9,7 +9,8 @@ import shoppingCartDark from './imgs/shopping_cart_dark.png';
 import shoppingCartLight from './imgs/shopping_cart_light.png';
 import userProfileDark from './imgs/user_profile_dark.png';
 import userProfileLight from './imgs/user_profile_light.png';
-import search from './imgs/search.png';
+import searchLight from './imgs/search_light.png';
+import searchDark from './imgs/search_dark.png';
 
 //* Components
 import ModalDropDown from '../ModalDropDown/ModalDropDown';
@@ -49,7 +50,7 @@ const Navbar = ({ theme, setShowCategories, setShowSignIn, setShowCart }) => {
             />
             <img 
                 className='search-icon'
-                src={search}
+                src={handleIcons(searchDark, searchLight)}
                 alt='Search icon'
             />
 
