@@ -2,6 +2,10 @@
     text-decoration: none;
 }
 
+.nav-container img {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 1007px) {
 
     /* Grid container 2 row 12 column grid */
@@ -66,24 +70,16 @@
     }
 
     .user-profile {
-        /* not sure if i'm into the fixed profile icon 🤔 */
-        /* position: fixed; */
         height: 2.75vh;
         top: 1.45vh;
         justify-self: center;
         align-self: center;
-        grid-column: 10 / 12;
+        grid-column: 11 / 12;
         grid-row: 1 / 2;
     }
-
-    
 }
 
 @media screen and (max-width: 640px) {
-
-    .nav-container {
-        
-    }
 
     .logo {
         grid-column: 1 / 4;
@@ -120,13 +116,12 @@
     }
 
     .user-profile {
-         /* not sure if i'm into the fixed profile icon 🤔 */
-         width: 6.75vw;
-         right: 14vw;
-        /* justify-self: center;
-        align-self: center; */
-        /* grid-column: 11 / 12;
-        grid-row: 1 / 2; */
+        width: 6.75vw;
+        right: 14vw;
+        justify-self: center;
+        align-self: center;
+        grid-column: 10 / 12;
+        grid-row: 1 / 2; 
     }
 
 }
