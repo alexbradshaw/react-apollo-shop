@@ -9,6 +9,7 @@ import translate from "translate";
 import Landing from './pages/Landing/Landing';
 import ModalSignIn from './components/ModalSignIn/ModalSignIn';
 import Settings from './pages/Settings/Settings';
+import Profile from './pages/Profile/Profile';
 
 //* Components
 import Navbar from './components/Navbar/Navbar';
@@ -80,6 +81,7 @@ const App = () => {
         {/* Pages */}
         <Route path='/' exact element={< Landing /> } Carousel={Carousel}/>
         <Route path='/settings' exact element={< Settings theme={theme} switchTheme={switchTheme}/> } />
+        <Route path='/Profile' exact element={< Profile /> }/>
         
         {/* Temporary Route */}
         <Route path='/footer' exact element={< Footer /> }/>
